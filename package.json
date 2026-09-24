@@ -1,0 +1,26 @@
+{
+  "name": "cloudflare-developer-platform-inventory",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Read-only, sanitized Cloudflare Developer Platform inventory collector",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajmontalbano/cloudflare-developer-platform-inventory.git"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "inventory": "tsx src/cli.ts",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

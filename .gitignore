@@ -1,0 +1,14 @@
+node_modules/
+dist/
+inventory-output/
+reports/
+cloudflare-inventory-*.json
+cloudflare-inventory-*.md
+cloudflare-drift-*.json
+cloudflare-drift-*.md
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+.DS_Store
+*.log
