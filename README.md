@@ -20,7 +20,7 @@ It does **not** request Worker source, R2 objects, Durable Object instance data,
 
 ## Optional Request Journey Worker
 
-The repository also contains a separate `workers/request-journey` package. It is a small, customer-deployable reverse proxy for correlating Cloudflare edge events with origin logs. It is intentionally separate from the read-only inventory CLI and does not collect source code, request bodies, query strings, credentials, or PHI.
+The repository also contains a separate `workers/request-journey` package. It is a small, customer-deployable reverse proxy for correlating Cloudflare edge events with origin logs. It is intentionally separate from the read-only inventory CLI and does not collect source code, request bodies, query strings, credentials, or sensitive application data.
 
 See [`workers/request-journey/README.md`](workers/request-journey/README.md) for the deployment and customer handoff workflow.
 

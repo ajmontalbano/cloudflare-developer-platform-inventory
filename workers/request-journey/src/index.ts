@@ -42,7 +42,7 @@ export default {
     if (!policy.allowed) {
       const response = new Response("Request not allowed", { status: 403 });
       const headers = new Headers(response.headers);
-      headers.set("x-station-trace-id", traceId);
+      headers.set("x-request-journey-id", traceId);
       console.log(JSON.stringify({
         event: "request_journey",
         traceId,
@@ -65,7 +65,7 @@ export default {
     originUrl.search = requestUrl.search;
 
     const upstreamHeaders = new Headers(request.headers);
-    upstreamHeaders.set("x-station-trace-id", traceId);
+    upstreamHeaders.set("x-request-journey-id", traceId);
     upstreamHeaders.set("traceparent", createTraceparent(traceId));
     if (env.ORIGIN_HOST_HEADER) upstreamHeaders.set("host", env.ORIGIN_HOST_HEADER);
 
@@ -103,10 +103,10 @@ export default {
     console.log(JSON.stringify(event));
 
     const clientHeaders = new Headers(response.headers);
-    clientHeaders.set("x-station-trace-id", traceId);
+    clientHeaders.set("x-request-journey-id", traceId);
     clientHeaders.set("access-control-expose-headers", appendHeader(
       clientHeaders.get("access-control-expose-headers"),
-      "x-station-trace-id",
+      "x-request-journey-id",
     ));
 
     return new Response(response.body, {
