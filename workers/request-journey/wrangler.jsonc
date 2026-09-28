@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "request-journey",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-28",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "vars": {
+    "ORIGIN": "https://replace-with-origin.example"
+  }
+}
